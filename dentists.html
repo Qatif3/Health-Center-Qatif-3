@@ -13,6 +13,32 @@
         h1 {
             color: #4CAF50;
         }
+        .dentist-gallery {
+            display: flex;
+            flex-direction: column; /* Stack images vertically */
+            align-items: center; /* Center images horizontally */
+            gap: 20px;
+        }
+        .dentist-gallery img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .dentist-name {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+        }
+        .patient-image {
+            margin-top: 20px;
+        }
+        .patient-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
         img {
             max-width: 200px;
             margin-bottom: 10px;
@@ -21,6 +47,33 @@
 </head>
 <body>
     <h1>الأسنان</h1>
+    <!-- Random Patient Image -->
+    <div class="patient-image">
+        <h2>Random Patient Image</h2>
+        <img id="randomPatientImage" src="" alt="Random Patient">
+    </div>
+
+    <a href="index.html">Back to Main Page</a>
+
+    <script>
+        // Array of random patient image sources
+        const patientImages = [
+            'patient1.jpg', 
+            'patient2.jpg', 
+            'patient3.jpg', 
+            'patient4.jpg', 
+            'patient5.jpg'
+        ];
+
+        // Function to select a random image from the array
+        function getRandomPatientImage() {
+            const randomIndex = Math.floor(Math.random() * patientImages.length);
+            return patientImages[randomIndex];
+        }
+
+        // Set the random image source to the <img> tag
+        document.getElementById('randomPatientImage').src = getRandomPatientImage();
+    </script>
     <img src="dentist-icon.png" alt="Dentists Image">
     <p>:طاقم الأسنان مكون من</strong></p>
     <strong>الدكتورة / زينب الجشي</strong></p>
